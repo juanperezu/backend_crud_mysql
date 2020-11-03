@@ -28,6 +28,41 @@ res.json(rows[0]); // traiga los otros campos
 }
 })// fin conexion
 });
+// agregar un modòdulo
+
+router.post('/nuevo-modulo',(req,res)=>{
+    const {modulo,mod_prefijo}=req.body;
+    
+    let alumno =[modulo,mod_prefijo];
+    
+    let nuevoAModulos =`INSERT INTO modulos(modulo, mod_prefijo)
+    VALUES(?,?)`;
+    mysqlConnection.query(nuevoAlumno,alumno,(err,results,fields)=>{
+    if(err){
+       return console.error(err.message);
+    }else{
+       res.json({message:`Módulo agregado`})
+    }
+    })});
+
+// Editar mòdulo
+router.put('/modulo/:id',(req,res)=>{
+   const {modulo,mod_prefijo}=req.body;
+   const {id} =req.params;
+   
+   
+   mysqlConnection.query(`UPDATE modulos SET modulo=?,mod_prefijo=? WHERE id=?`,
+   [modulo,mod_prefijo,id],(err,rows,fields)=>{
+   if(!err){
+      
+      res.json({status:`Módulo Actualizado`});
+   }else{
+      console.log(err);
+   }
+   })});
+
+
+
  // Borrar probar desde de postman
 router.delete('/borrar/:id',(req,res)=>{
     const { id } = req.params; // params´id

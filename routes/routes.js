@@ -28,7 +28,7 @@ if(err){
 })});
 router.put('/estudiante/:id',(req,res)=>{
    const {nombres,apellidos,correo,documento,telefono_celular,fecha_nacimiento,institucion_id}=req.body;
-    const {id} =req.params;
+   const {id} =req.params;
    
    
    mysqlConnection.query(`UPDATE actores SET nombres=?,apellidos=?,correo=?,documento=?,
