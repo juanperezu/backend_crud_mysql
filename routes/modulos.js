@@ -33,8 +33,7 @@ router.delete('/borrar/:id',(req,res)=>{
     const { id } = req.params; // params´id
     mysqlConnection.query('DELETE FROM modulos WHERE id =?',[id],
     (err,rows,fields)=>{
-    
-    if(!err){
+        if(!err){
     res.json({message: 'Módulo '+ id + 'Borrado'}); // traiga los otros campos
     }else{
         console.log(err);

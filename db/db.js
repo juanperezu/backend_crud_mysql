@@ -1,6 +1,6 @@
 const mysql =require('mysql');
 const mysqlConnection= mysql.createConnection({
-    // db creada en clew clouw
+    // db creada https://console.clever-cloud.com/
 host:'bprbeudfwg7eeipqbp9t-mysql.services.clever-cloud.com',
 user:'urappmxol0gahuzf',
 password:'piXeRzrY5CoTJ351xaU4',
